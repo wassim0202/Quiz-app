@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historique des tentatives</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="student-dashboard.html">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="me-2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                </svg>
+                Quiz Platform
+            </a>
+            <div class="d-flex align-items-center">
+                <a href="student-dashboard.html" class="btn btn-outline-light btn-sm me-2">Quiz</a>
+                <span class="text-white me-3" id="studentNameDisplay"></span>
+                <button class="btn btn-outline-light btn-sm" onclick="logout()">Déconnexion</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="mb-4">
+            <h1 class="mb-2">Historique de mes tentatives</h1>
+            <p class="text-muted">Consultez vos résultats passés</p>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Quiz</th>
+                                <th>Score</th>
+                                <th>Temps</th>
+                                <th>Date</th>
+                                <th>Statut</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- History will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="noHistory" class="text-center py-5" style="display: none;">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-muted mb-3">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <h5 class="text-muted">Aucune tentative</h5>
+                    <p class="text-muted">Vous n'avez pas encore passé de quiz</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+    <script src="student-history.js"></script>
+</body>
+</html>
